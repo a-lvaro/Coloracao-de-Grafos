@@ -5,15 +5,13 @@ from random import choice
 class Vertice:
     def __init__(self, vertice) -> None:
         self.vertice = vertice
-        self.aresta = []
+        self.adjacentes = []
         self.__cor = ['branco', 'vermelho', 'verde', 'preto', None]
 
-    def addAresta(self, u: int, v: int):
-        if u == self.vertice:
-            self.aresta.append(v)
-
-        else:
-            self.aresta.append(u)
+    def addAdjacente(self, v: int) -> None:
+        # if u == self.vertice:
+        self.adjacentes.append(v)
+        self.adjacentes.sort()
 
     def setCor(self) -> None:
         self.__cor.remove(None)
@@ -26,6 +24,7 @@ class Vertice:
         if cor in self.__cor:
             self.__cor.remove(cor)
 
+<<<<<<< HEAD
     def getAresta(self):
         return self.aresta
 
@@ -34,3 +33,7 @@ class Vertice:
 
     def getVertice(self) -> int:
         return self.__vertice
+=======
+    def getAdjacentes(self):
+        return self.adjacentes
+>>>>>>> 65ec36fe11410aebcd2db697e565e6d4d5102083

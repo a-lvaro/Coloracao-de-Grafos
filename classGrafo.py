@@ -1,20 +1,40 @@
+from tkinter import E
+
+from numpy import true_divide
 from classVertice import Vertice
 from cores import Cor
 
 
 class Grafo:
-    def __init__(self, vertices: int):
+    def __init__(self):
         self.vertices = []
-        self.qtdVertices = vertices
+        self.qtdVertices = 15
+        self.numArquivo = 0
 
-        for i in range(vertices):
+        for i in range(15):
             self.vertices.append(Vertice(i + 1))
 
-    def addAresta(self, u: int, v: int):
-        # grafo não orientado, os dois vértices precisam saber que estão ligados
-        if not v in self.vertices[u - 1].aresta:
-            self.vertices[u - 1].addAresta(u, v)
-            self.vertices[v - 1].addAresta(u, v)
+        self.iniciarGrafo()
+
+        for vertice in self.vertices:
+            print(vertice.getAdjacentes())
+
+    def iniciarGrafo(self) -> None:
+        file = open('./grafos_de_entrada/' +
+                    self.numArquivo.__str__() + '_grafo.txt')
+        for _ in range(4):
+            linha = file.readline()
+
+        while linha != []:
+            linha = file.readline().split()
+
+            if linha != []:
+                self.addAdjacente(int(linha[0]), int(linha[1]))
+
+    def addAdjacente(self, u: int, v: int):
+        if not v in self.vertices[u - 1].adjacentes:
+            self.vertices[u - 1].addAdjacente(v)
+            #self.vertices[v - 1].addAdjacente(u, v)
 
     def cores(self) -> None:
         Cor(self.vertices, 7)
