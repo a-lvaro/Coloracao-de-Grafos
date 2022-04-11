@@ -1,4 +1,4 @@
-from tkinter import E
+
 
 from numpy import true_divide
 from classVertice import Vertice
@@ -32,7 +32,7 @@ class Grafo:
                 self.addAdjacente(int(linha[0]), int(linha[1]))
 
     def addAdjacente(self, u: int, v: int):
-        if not v in self.vertices[u - 1].adjacentes:
+        if not v in self.vertices[u - 1].getAdjacentes():
             self.vertices[u - 1].addAdjacente(v)
             #self.vertices[v - 1].addAdjacente(u, v)
 
