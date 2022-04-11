@@ -28,3 +28,9 @@ class Vertice:
 
     def getAresta(self):
         return self.aresta
+
+    def setAresta(self, aresta) -> None:
+        self.aresta.append(aresta)
+
+    def getAresta(self) -> list:
+        return self.aresta
