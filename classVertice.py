@@ -25,6 +25,7 @@ class Vertice:
             self.__cor.remove(cor)
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     def getAresta(self):
         return self.aresta
 
@@ -35,5 +36,8 @@ class Vertice:
         return self.__vertice
 =======
     def getAdjacentes(self):
+=======
+    def getAdjacentes(self) -> None:
+>>>>>>> 43970124d82747af945ef04878d5ca1438fed4cc
         return self.adjacentes
 >>>>>>> 65ec36fe11410aebcd2db697e565e6d4d5102083
