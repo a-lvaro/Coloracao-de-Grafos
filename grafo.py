@@ -1,7 +1,4 @@
-
-
-from numpy import true_divide
-from classVertice import Vertice
+from vertice import Vertice
 from cores import Cor
 
 
@@ -33,8 +30,7 @@ class Grafo:
 
     def addAdjacente(self, u: int, v: int):
         if not v in self.vertices[u - 1].getAdjacentes():
-            self.vertices[u - 1].addAdjacente(v)
-            #self.vertices[v - 1].addAdjacente(u, v)
+            self.vertices[u - 1].setAdjacente(v)
 
     def cores(self) -> None:
         Cor(self.vertices, 7)
@@ -47,6 +43,3 @@ class Grafo:
         como a lista começa em 0 e os vértices em 1,
         para achar a localização dos vértices na lista será n - 1
         -------------------------------------------------------'''
-
-    def getAdjacentes(self, vertice: int) -> list:
-        return self.vertices[vertice - 1].aresta

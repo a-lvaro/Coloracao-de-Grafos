@@ -1,4 +1,3 @@
-from cmath import inf
 from random import choice
 
 
@@ -8,10 +7,8 @@ class Vertice:
         self.__adjacentes = []
         self.__cor = ['branco', 'vermelho', 'verde', 'preto', None]
 
-    def addAdjacente(self, v: int) -> None:
-        # if u == self.vertice:
+    def setAdjacente(self, v: int) -> None:
         self.__adjacentes.append(v)
-        self.__adjacentes.sort()
 
     def getAdjacentes(self) -> list:
         return self.__adjacentes
@@ -26,6 +23,7 @@ class Vertice:
     def removeCor(self, cor: str) -> None:
         if cor in self.__cor:
             self.__cor.remove(cor)
+
 
     def getAresta(self):
         return self.aresta

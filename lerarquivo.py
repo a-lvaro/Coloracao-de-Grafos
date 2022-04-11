@@ -1,14 +1,13 @@
+from numpy import loadtxt
+
+
 class IniciarGrafo:
-    def __init__(self, vertices :list):
-        file = open('./grafos_de_entrada/' +
-                    self.numArquivo.__str__() + '_grafo.txt')
-        for _ in range(4):
-            linha = file.readline()
+    def __init__(self):
+        self.numArquivo = 0
+        with open(open('./grafos_de_entrada/0_grafo.txt')) as file:
+            dados = loadtxt(file, delimiter=' ')
 
-        while linha != []:
-            linha = file.readline().split()
+        print(dados)
 
-            if linha != []:
-                self.addAdjacente(int(linha[0]), int(linha[1]))
 
-        file.close()
+IniciarGrafo()

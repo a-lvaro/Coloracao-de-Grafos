@@ -1,4 +1,4 @@
-from classGrafo import Grafo
+from grafo import Grafo
 
 g = Grafo()
 
