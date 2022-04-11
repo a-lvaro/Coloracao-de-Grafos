@@ -24,5 +24,5 @@ class Vertice:
         if cor in self.__cor:
             self.__cor.remove(cor)
 
-    def getAdjacentes(self):
+    def getAdjacentes(self) -> None:
         return self.adjacentes
