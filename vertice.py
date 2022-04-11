@@ -3,7 +3,7 @@ from random import choice
 
 class Vertice:
     def __init__(self, vertice) -> None:
-        self.vertice = vertice
+        self.__vertice = vertice
         self.__adjacentes = []
         self.__cor = ['branco', 'vermelho', 'verde', 'preto', None]
 
@@ -21,21 +21,8 @@ class Vertice:
         return self.__cor
 
     def removeCor(self, cor: str) -> None:
-        try:
-            if cor in self.__cor:
-                self.__cor.remove(cor)
-
-        except:
-            print("\n\n################")
-            print('Vertice: ', self.vertice)
-            print('removeCor: ', self.__cor)
-            print('remover: ', cor)
-
-    def getAresta(self):
-        return self.aresta
-
-    def setVertice(self, vertice):
-        self.__vertice = vertice
+        if cor in self.__cor:
+            self.__cor.remove(cor)
 
     def getVertice(self) -> int:
         return self.__vertice

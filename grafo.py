@@ -1,43 +1,30 @@
 from vertice import Vertice
 from cores import Cor
+from lerarquivo import IniciarGrafo
 
 
 class Grafo:
     def __init__(self):
-        self.vertices = []
-        self.qtdVertices = 15
+        self.__vertices = []
         self.numArquivo = 0
 
         for i in range(15):
-            self.vertices.append(Vertice(i + 1))
+            self.__vertices.append(Vertice(i + 1))
 
         self.iniciarGrafo()
 
-        for vertice in self.vertices:
+        for vertice in self.__vertices:
             print(vertice.getAdjacentes())
 
     def iniciarGrafo(self) -> None:
-        file = open('./grafos_de_entrada/' +
-                    self.numArquivo.__str__() + '_grafo.txt')
-        for _ in range(4):
-            linha = file.readline()
-
-        while linha != []:
-            linha = file.readline().split()
-
-            if linha != []:
-                self.addAdjacente(int(linha[0]), int(linha[1]))
-
-    def addAdjacente(self, u: int, v: int):
-        if not v in self.vertices[u - 1].getAdjacentes():
-            self.vertices[u - 1].setAdjacente(v)
+        IniciarGrafo(self.__vertices)
 
     def cores(self) -> None:
-        Cor(self.vertices, 7)
+        Cor(self.__vertices, 7)
 
     def mostrarCores(self):
-        for vertice in self.vertices:
-            print('{} : {}'.format(vertice.vertice, vertice.getCor()))
+        for vertice in self.__vertices:
+            print('{} : {}'.format(vertice.getVertice(), vertice.getCor()))
 
     '''--------------------------------------------------------
         como a lista começa em 0 e os vértices em 1,
