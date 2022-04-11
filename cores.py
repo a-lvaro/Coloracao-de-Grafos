@@ -6,8 +6,7 @@ class Cor:
         self.__vertices = vertices
         adjacentes = [pivo]
 
-        # while adjacentes:
-        for i in range(3):
+        while adjacentes:
             pivo = adjacentes.pop(0)
 
             print('\n\npivo: ', pivo)
@@ -22,7 +21,8 @@ class Cor:
             print('lista percorrer: ', adjacentes)
 
     def __removeCorAdjacentes(self, pivo: int):
-        print('ADJACENTES ao vértice', self.__vertices[pivo-1].getAdjacentes())
         for vertice in self.__vertices[pivo - 1].getAdjacentes():
-            self.__vertices[vertice -
-                            1].removeCor(self.__vertices[pivo - 1].getCor())
+            # o adjacente a esse vértice já pode ter uma cor
+            if type(self.__vertices[pivo - 1].getCor()) == list:
+                self.__vertices[vertice -
+                                1].removeCor(self.__vertices[pivo - 1].getCor())

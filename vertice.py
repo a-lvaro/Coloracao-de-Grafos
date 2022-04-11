@@ -21,9 +21,15 @@ class Vertice:
         return self.__cor
 
     def removeCor(self, cor: str) -> None:
-        if cor in self.__cor:
-            self.__cor.remove(cor)
+        try:
+            if cor in self.__cor:
+                self.__cor.remove(cor)
 
+        except:
+            print("\n\n################")
+            print('Vertice: ', self.vertice)
+            print('removeCor: ', self.__cor)
+            print('remover: ', cor)
 
     def getAresta(self):
         return self.aresta
