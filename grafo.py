@@ -37,7 +37,7 @@ class Grafo:
         listaPrioridade = []
 
         for i, vertice in enumerate(self.__vertices):
-            listaPrioridade.append([i, len(vertice.getAdjacentes())])
+            listaPrioridade.append([i + 1, len(vertice.getAdjacentes())])
 
         listaPrioridade = np.array(listaPrioridade)
         listaPrioridade = listaPrioridade[listaPrioridade[:, 1].argsort()]
