@@ -1,25 +1,32 @@
 class Cor:
-    def __init__(self, vertices, pivo):
+    def __init__(self, vertices, pivo, listaPrioridade):
         self.__vertices = vertices
         adjacentes = [pivo]
 
-        while adjacentes:
-            pivo = adjacentes.pop(0)
+        pivo = listaPrioridade[0][0]
+        print(pivo)
 
-            # self.__conferirCorAdjacente(pivo)
+        self.__conferirCorAdjacente(pivo)
+        self.__vertices[pivo - 1].setCor()
+        self.__removeCorAdjacentes(pivo)
 
-            self.__vertices[pivo - 1].setCor()
+        # while adjacentes:
+        #     pivo = adjacentes.pop(0)
 
-            self.__removeCorAdjacentes(pivo)
+        #     # self.__conferirCorAdjacente(pivo)
 
-            for aux in self.__vertices[pivo - 1].getAdjacentes():
-                if type(self.__vertices[aux - 1].getCor()) == list and aux not in adjacentes:
-                    adjacentes.append(aux)
+        #     self.__vertices[pivo - 1].setCor()
+
+        #     self.__removeCorAdjacentes(pivo)
+
+        #     for aux in self.__vertices[pivo - 1].getAdjacentes():
+        #         if type(self.__vertices[aux - 1].getCor()) == list and aux not in adjacentes:
+        #             adjacentes.append(aux)
 
     def __removeCorAdjacentes(self, pivo: int):
         for vertice in self.__vertices[pivo - 1].getAdjacentes():
             # o adjacente a esse vértice já pode ter uma cor
-            if type(self.__vertices[pivo - 1].getCor()) == list:
+            if type(self.__vertices[vertice - 1].getCor()) == list:
                 self.__vertices[vertice -
                                 1].removeCor(self.__vertices[pivo - 1].getCor())
 

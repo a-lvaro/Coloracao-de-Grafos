@@ -1,6 +1,7 @@
 from vertice import Vertice
 from cores import Cor
 from lerarquivo import IniciarGrafo
+import numpy as np
 
 
 class Grafo:
@@ -14,14 +15,14 @@ class Grafo:
 
         self.iniciarGrafo()
 
-        for vertice in self.__vertices:
-            print(vertice.getAdjacentes())
+        for i, vertice in enumerate(self.__vertices):
+            print(i, '  :  ', vertice.getAdjacentes())
 
     def iniciarGrafo(self) -> None:
         IniciarGrafo(self.__vertices, self.__numArquivo)
 
-    def cores(self) -> None:
-        Cor(self.__vertices, self.__verticeInicio)
+    def cores(self, listaPrioridade) -> None:
+        Cor(self.__vertices, self.__verticeInicio, listaPrioridade)
 
     def mostrarCores(self):
         for vertice in self.__vertices:
@@ -31,3 +32,13 @@ class Grafo:
         como a lista começa em 0 e os vértices em 1,
         para achar a localização dos vértices na lista será n - 1
         -------------------------------------------------------'''
+
+    def listaPrioridade(self):
+        listaPrioridade = []
+
+        for i, vertice in enumerate(self.__vertices):
+            listaPrioridade.append([i, len(vertice.getAdjacentes())])
+
+        listaPrioridade = np.array(listaPrioridade)
+        listaPrioridade = listaPrioridade[listaPrioridade[:, 1].argsort()]
+        return listaPrioridade[::-1]
