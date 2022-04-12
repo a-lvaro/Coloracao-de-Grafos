@@ -4,9 +4,10 @@ from lerarquivo import IniciarGrafo
 
 
 class Grafo:
-    def __init__(self):
+    def __init__(self, numArquivo: int, verticeInicio: int):
         self.__vertices = []
-        self.numArquivo = 0
+        self.__numArquivo = str(numArquivo)
+        self.__verticeInicio = verticeInicio
 
         for i in range(15):
             self.__vertices.append(Vertice(i + 1))
@@ -17,10 +18,10 @@ class Grafo:
             print(vertice.getAdjacentes())
 
     def iniciarGrafo(self) -> None:
-        IniciarGrafo(self.__vertices)
+        IniciarGrafo(self.__vertices, self.__numArquivo)
 
     def cores(self) -> None:
-        Cor(self.__vertices, 7)
+        Cor(self.__vertices, self.__verticeInicio)
 
     def mostrarCores(self):
         for vertice in self.__vertices:
