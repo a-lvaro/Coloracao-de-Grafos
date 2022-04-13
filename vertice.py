@@ -1,6 +1,3 @@
-from random import choice
-
-
 class Vertice:
     def __init__(self, vertice) -> None:
         self.__vertice = vertice
@@ -14,8 +11,9 @@ class Vertice:
         return self.__adjacentes
 
     def setCor(self) -> None:
-        self.__cor.remove(None)
-        self.__cor = choice(self.__cor)
+        # self.__cor.remove(None)
+        if self.__cor != []:
+            self.__cor = self.__cor.pop(0)
 
     def getCor(self) -> str or list:
         return self.__cor

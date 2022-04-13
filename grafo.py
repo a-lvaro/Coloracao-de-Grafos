@@ -5,10 +5,9 @@ import numpy as np
 
 
 class Grafo:
-    def __init__(self, numArquivo: int, verticeInicio: int):
+    def __init__(self, numArquivo: int):
         self.__vertices = []
         self.__numArquivo = str(numArquivo)
-        self.__verticeInicio = verticeInicio
 
         for i in range(15):
             self.__vertices.append(Vertice(i + 1))
@@ -22,7 +21,7 @@ class Grafo:
         IniciarGrafo(self.__vertices, self.__numArquivo)
 
     def cores(self, listaPrioridade) -> None:
-        Cor(self.__vertices, self.__verticeInicio, listaPrioridade)
+        Cor(self.__vertices, listaPrioridade)
 
     def mostrarCores(self):
         for vertice in self.__vertices:
