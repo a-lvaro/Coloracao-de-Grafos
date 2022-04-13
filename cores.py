@@ -10,7 +10,7 @@ class Cor:
 
             self.__vertices[pivo - 1].setCor()
 
-            self.__removeCorAdjacentes(pivo)
+            # self.__removeCorAdjacentes(pivo)
 
             for aux in self.__vertices[pivo - 1].getAdjacentes():
                 if type(self.__vertices[aux - 1].getCor()) == list and aux not in adjacentes:
@@ -19,7 +19,7 @@ class Cor:
     def __removeCorAdjacentes(self, pivo: int):
         for vertice in self.__vertices[pivo - 1].getAdjacentes():
             # o adjacente a esse vértice já pode ter uma cor
-            if type(self.__vertices[pivo - 1].getCor()) == list:
+            if type(self.__vertices[vertice - 1].getCor()) == list:
                 self.__vertices[vertice -
                                 1].removeCor(self.__vertices[pivo - 1].getCor())
 
