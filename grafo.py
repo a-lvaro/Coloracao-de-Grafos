@@ -35,6 +35,9 @@ class Grafo:
     def listaPrioridade(self):
         listaPrioridade = []
 
+        # for vertice in self.__vertices:
+        #     vertice.getAdjacen
+
         for i, vertice in enumerate(self.__vertices):
             listaPrioridade.append([i + 1, len(vertice.getAdjacentes())])
 

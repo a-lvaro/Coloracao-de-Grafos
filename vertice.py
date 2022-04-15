@@ -12,8 +12,12 @@ class Vertice:
 
     def setCor(self) -> None:
         # self.__cor.remove(None)
-        if self.__cor != []:
+        if self.__cor != [] and None not in self.__cor:
             self.__cor = self.__cor.pop(0)
+
+        elif self.__cor != []:
+            self.__cor.remove(None)
+            self.__cor = choice(self.__cor)
 
     def getCor(self) -> str or list:
         return self.__cor
