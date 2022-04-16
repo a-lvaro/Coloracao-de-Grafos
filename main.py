@@ -1,7 +1,7 @@
 from grafo import Grafo
 
 
-for i in range(15):
+for i in range(1):
     g = Grafo(i)
 
     if g.grafoPlanar():
@@ -12,5 +12,5 @@ for i in range(15):
     else:
         print('\n\nColoração\n')
 
-    g.cores()
-    g.mostrarCores()
+    # g.cores()
+    # g.mostrarCores()
