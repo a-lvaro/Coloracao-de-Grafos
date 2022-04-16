@@ -5,11 +5,12 @@ for i in range(15):
     g = Grafo(i)
 
     if g.grafoPlanar():
-        listaPrioridade = g.listaPrioridade()
-        print('_________')
-        print(listaPrioridade)
-        g.cores(listaPrioridade)
-        g.mostrarCores()
+        print(
+            f'\n\n{i} :  Como não é um grafo planar, não é possível colori-lo com apenas quatro cores \n')
+        print('    Lista com a possível coloração')
 
     else:
-        print(i, '  :  Não é um grafo planar')
+        print('\n\nColoração\n')
+
+    g.cores()
+    g.mostrarCores()

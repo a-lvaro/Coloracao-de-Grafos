@@ -2,8 +2,8 @@ class Vertice:
     def __init__(self, vertice) -> None:
         self.__vertice = vertice
         self.__adjacentesOrientado = []
-        self.__cor = ['branco', 'vermelho', 'verde', 'preto', None]
         self.__adjacentesNaoOrientado = []
+        self.__cor = ['branco', 'vermelho', 'verde', 'preto']
 
     def setAdjacenteOrientado(self, v: int) -> None:
         self.__adjacentesOrientado.append(v)

@@ -8,11 +8,13 @@ class Grafo:
     def __init__(self, numArquivo: int):
         self.__vertices = []
         self.__numArquivo = str(numArquivo)
+        self.__listaPrioridade = []
 
         for i in range(15):
             self.__vertices.append(Vertice(i + 1))
 
         self.iniciarGrafo()
+        self.__listaPrioridade = self.listaPrioridade()
 
         # for i, vertice in enumerate(self.__vertices):
         #     print(i, '  :  ', vertice.getAdjacentesOrientado())
@@ -20,8 +22,8 @@ class Grafo:
     def iniciarGrafo(self) -> None:
         IniciarGrafo(self.__vertices, self.__numArquivo)
 
-    def cores(self, listaPrioridade) -> None:
-        Cor(self.__vertices, listaPrioridade)
+    def cores(self) -> None:
+        Cor(self.__vertices, self.__listaPrioridade)
 
     def mostrarCores(self):
         for vertice in self.__vertices:
