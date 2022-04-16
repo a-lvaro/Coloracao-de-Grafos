@@ -5,7 +5,7 @@ import numpy as np
 
 
 class Grafo:
-    def __init__(self, numArquivo: int):
+    def __init__(self, numArquivo: int) -> None:
         self.__vertices = []
         self.__numArquivo = str(numArquivo)
         self.__listaPrioridade = []

@@ -1,5 +1,5 @@
 class IniciarGrafo:
-    def __init__(self, vertices: list, numArquivo: str):
+    def __init__(self, vertices: list, numArquivo: str) -> None:
         with open('./grafos_de_entrada/' + numArquivo + '_grafo.txt') as file:
             linha = None
 

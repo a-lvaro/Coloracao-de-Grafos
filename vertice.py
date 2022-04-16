@@ -1,5 +1,5 @@
 class Vertice:
-    def __init__(self, vertice) -> None:
+    def __init__(self, vertice: int) -> None:
         self.__vertice = vertice
         self.__adjacentes = []
         self.__cor = ['branco', 'vermelho', 'verde', 'preto']
