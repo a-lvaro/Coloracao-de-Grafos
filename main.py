@@ -1,9 +1,15 @@
 from grafo import Grafo
 
 
-g = Grafo(3)
+for i in range(15):
+    g = Grafo(i)
 
-listaPrioridade = g.listaPrioridade()
-print(listaPrioridade)
-g.cores(listaPrioridade)
-g.mostrarCores()
+    if g.grafoPlanar():
+        listaPrioridade = g.listaPrioridade()
+        print('_________')
+        print(listaPrioridade)
+        g.cores(listaPrioridade)
+        g.mostrarCores()
+
+    else:
+        print(i, '  :  Não é um grafo planar')

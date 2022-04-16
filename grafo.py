@@ -14,8 +14,8 @@ class Grafo:
 
         self.iniciarGrafo()
 
-        for i, vertice in enumerate(self.__vertices):
-            print(i, '  :  ', vertice.getAdjacentes())
+        # for i, vertice in enumerate(self.__vertices):
+        #     print(i, '  :  ', vertice.getAdjacentesOrientado())
 
     def iniciarGrafo(self) -> None:
         IniciarGrafo(self.__vertices, self.__numArquivo)
@@ -35,12 +35,18 @@ class Grafo:
     def listaPrioridade(self):
         listaPrioridade = []
 
-        # for vertice in self.__vertices:
-        #     vertice.getAdjacen
-
-        for i, vertice in enumerate(self.__vertices):
-            listaPrioridade.append([i + 1, len(vertice.getAdjacentes())])
+        for vertice in self.__vertices:
+            listaPrioridade.append(
+                [vertice.getVertice(), len(vertice.getdjacentesNaoOrientado())])
 
         listaPrioridade = np.array(listaPrioridade)
         listaPrioridade = listaPrioridade[listaPrioridade[:, 1].argsort()]
         return listaPrioridade[::-1]
+
+    def grafoPlanar(self) -> bool:
+        qtdAresta = 0
+
+        for vertice in self.__vertices:
+            qtdAresta += len(vertice.getAdjacentesOrientado())
+
+        return qtdAresta <= 3 * len(self.__vertices) - 6
