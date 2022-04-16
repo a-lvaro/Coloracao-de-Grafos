@@ -24,7 +24,7 @@ class Grafo:
 
     def mostrarCores(self):
         for vertice in self.__vertices:
-            print('{} : {}'.format(vertice.getVertice(), vertice.getCor()))
+            print('     {} : {}'.format(vertice.getVertice(), vertice.getCor()))
 
     '''--------------------------------------------------------
         como a lista começa em 0 e os vértices em 1,
@@ -50,7 +50,5 @@ class Grafo:
 
         for vertice in self.__vertices:
             qtdAresta += len(vertice.getAdjacente())
-
-        print('qtdAresta: ', qtdAresta)
 
         return qtdAresta <= 3 * len(self.__vertices) - 6

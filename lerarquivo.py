@@ -12,6 +12,6 @@ class IniciarGrafo:
                 if linha != []:
                     self.__addAdjacente(int(linha[0]), int(linha[1]), vertices)
 
-    def __addAdjacente(self, u: int, v: int, vertices):
+    def __addAdjacente(self, u: int, v: int, vertices) -> None:
         if not v in vertices[u - 1].getAdjacente():
             vertices[u - 1].setAdjacente(v)
