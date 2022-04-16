@@ -16,8 +16,6 @@ class Grafo:
         self.iniciarGrafo()
         self.__listaPrioridade = self.listaPrioridade()
 
-        # for i, vertice in enumerate(self.__vertices):
-        #     print(i, '  :  ', vertice.getAdjacentesOrientado())
 
     def iniciarGrafo(self) -> None:
         IniciarGrafo(self.__vertices, self.__numArquivo)
