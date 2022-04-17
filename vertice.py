@@ -11,7 +11,6 @@ class Vertice:
         return self.__adjacentes
 
     def setCor(self) -> None:
-        # self.__cor.remove(None)
         if self.__cor != [] and None not in self.__cor:
             self.__cor = self.__cor.pop(0)
 

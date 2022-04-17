@@ -45,9 +45,6 @@ class Grafo:
     def grafoPlanar(self) -> bool:
         qtdAresta = 0
 
-        for i in self.__vertices:
-            print(i.getAdjacente())
-
         for vertice in self.__vertices:
             qtdAresta += len(vertice.getAdjacente())
 
