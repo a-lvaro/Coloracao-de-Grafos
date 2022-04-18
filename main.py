@@ -3,8 +3,8 @@ from grafo import Grafo
 
 for i in range(15):
     g = Grafo(i)
-
-    if g.grafoPlanar():
+r
+   if g.grafoPlanar():
         print('\n\nColoração\n')
 
     else:
