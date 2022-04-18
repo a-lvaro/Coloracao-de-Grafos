@@ -4,7 +4,7 @@ from iniciarGrafo import IniciarGrafo
 import numpy as np
 
 
-class Grafo:t
+class Grafo:
     def __init__(self, numArquivo: int) -> None:
         self.__vertices = []
         self.__numArquivo = str(numArquivo)
