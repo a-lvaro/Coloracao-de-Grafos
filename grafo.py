@@ -1,6 +1,6 @@
 from vertice import Vertice
 from cores import Cor
-from lerarquivo import IniciarGrafo
+from iniciarGrafo import IniciarGrafo
 import numpy as np
 
 

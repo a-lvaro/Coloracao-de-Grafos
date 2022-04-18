@@ -1,7 +1,7 @@
 from grafo import Grafo
 
 
-for i in range(1):
+for i in range(15):
     g = Grafo(i)
 
     if g.grafoPlanar():
