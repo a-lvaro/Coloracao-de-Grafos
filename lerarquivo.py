@@ -1,6 +1,3 @@
-from numpy import loadtxt
-
-
 class IniciarGrafo:
     def __init__(self, vertices: list, numArquivo: str) -> None:
         with open('./grafos_de_entrada/' + numArquivo + '_grafo.txt') as file:
@@ -15,6 +12,6 @@ class IniciarGrafo:
                 if linha != []:
                     self.__addAdjacente(int(linha[0]), int(linha[1]), vertices)
 
-    def __addAdjacente(self, u: int, v: int, vertices: list) -> None:
-        if not v in vertices[u - 1].getAdjacentes():
+    def __addAdjacente(self, u: int, v: int, vertices) -> None:
+        if not v in vertices[u - 1].getAdjacente():
             vertices[u - 1].setAdjacente(v)
