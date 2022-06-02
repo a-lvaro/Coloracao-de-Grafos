@@ -14,9 +14,6 @@ class Vertice:
         if self.__cor != []:
             self.__cor = self.__cor.pop(0)
 
-        elif self.__cor != []:
-            self.__cor = self.__cor[0]
-
     def getCor(self) -> str or list:
         return self.__cor
 
